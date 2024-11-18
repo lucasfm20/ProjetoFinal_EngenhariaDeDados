@@ -1,7 +1,14 @@
 import csv
 from faker import Faker
+from datetime import datetime, timedelta
 
 fake = Faker()
+
+
+def data_ultimo_ano():
+    hoje = datetime.today()
+    tres_anos_atras = hoje - timedelta(days=3*365)
+    return fake.date_between(start_date=tres_anos_atras, end_date=hoje)
 
 dados_cliente = []
 dados_imovel = []
@@ -9,7 +16,6 @@ dados_seguradora = []
 dados_corretor = []
 dados_cobertura = []
 dados_apolice_seguro = []
-
 
 for i in range(10000):  
     
@@ -22,7 +28,6 @@ for i in range(10000):
     }
     dados_cliente.append(cliente)
 
-    
     imovel = {
         'imovel_id': i + 1,
         'cliente_id': i + 1,  
@@ -32,7 +37,6 @@ for i in range(10000):
     }
     dados_imovel.append(imovel)
 
-    
     seguradora = {
         'seguradora_id': i + 1,
         'nome_seguradora': fake.company(),
@@ -42,7 +46,6 @@ for i in range(10000):
     }
     dados_seguradora.append(seguradora)
 
-    
     corretor = {
         'corretor_id': i + 1,
         'nome_corretor': fake.name(),
@@ -53,7 +56,6 @@ for i in range(10000):
     }
     dados_corretor.append(corretor)
 
-    
     cobertura = {
         'cobertura_id': i + 1,
         'descricao': fake.sentence(),
@@ -64,27 +66,22 @@ for i in range(10000):
     }
     dados_cobertura.append(cobertura)
 
-    
     apolice = {
         'apolice_id': i + 1,
         'cliente_id': i + 1,  
         'imovel_id': i + 1,  
         'seguradora_id': i + 1,  
         'corretor_id': i + 1, 
-        'data_inicio': fake.date_this_decade(),
-        'data_termino': fake.date_this_decade(),
+        'data_inicio': data_ultimo_ano(),
+        'data_termino': data_ultimo_ano(),
     }
     dados_apolice_seguro.append(apolice)
-
-
-
 
 def salvar_csv(nome_arquivo, dados, fieldnames):
     with open(nome_arquivo, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(dados)
-
 
 salvar_csv('clientes.csv', dados_cliente, ['cliente_id', 'nome_cliente', 'endereco_cliente', 'telefone_cliente', 'email_cliente'])
 salvar_csv('imoveis.csv', dados_imovel, ['imovel_id', 'cliente_id', 'endereco_imovel', 'tipo_imovel', 'valor_imovel'])
@@ -94,3 +91,4 @@ salvar_csv('coberturas.csv', dados_cobertura, ['cobertura_id', 'descricao', 'pre
 salvar_csv('apolices_seguro.csv', dados_apolice_seguro, ['apolice_id', 'cliente_id', 'imovel_id', 'seguradora_id', 'corretor_id', 'data_inicio', 'data_termino'])
 
 print('Arquivos CSV salvos com sucesso!')
+
