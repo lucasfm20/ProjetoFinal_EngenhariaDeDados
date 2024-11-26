@@ -1,4 +1,4 @@
-# Gold-zone
+# Gold-zone .
 from azure.storage.blob import BlobServiceClient
 from azure.core.exceptions import AzureError
 
