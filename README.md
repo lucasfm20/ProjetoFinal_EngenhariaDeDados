@@ -8,4 +8,8 @@ João Vitor Rodrigues Rocha - https://github.com/JoaoVitorRodriguesRocha <br>
 Lucas Fortunato Martins - https://github.com/lucasfm20 <br>
 
 ### Professor Orientador:
+
+
 Jorge Luiz da Silva - https://github.com/jlsilva01
+
+
