@@ -18,7 +18,7 @@ Criar uma conta gratuita na render para hospedar o banco https://render.com/
 Instalar vsCode e as extensões do python V11 - https://code.visualstudio.com/
 Instalar o Terraform -https://www.terraform.io/
 
-###Implantação
+### Implantação
 - Crie as tabelas no banco postgres com base na pasta scriptBanco.
 - Use o arquivo MassaDeDados e importe os csv no banco.
 - Suba o banco no render.
