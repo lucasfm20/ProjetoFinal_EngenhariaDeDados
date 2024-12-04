@@ -65,7 +65,7 @@ terraform apply
 
 4- No portal da azure clique na sua conta de armazenamento e gere um SAS token com os tipos de recursos selecionados(Serviço,Contêiner,Objeto)
 
-5- No databricks você deve copiar os notebooks de cada camada disponíveis na pasta convercaoBanco.
+5- No databricks você deve copiar os notebooks de cada camada disponíveis na pasta conversaoBanco.
 
 6- Inserir os scripts copiados em um notebook para cada camada.
 
