@@ -1,0 +1,24 @@
+/* custom.css */
+
+/* Altera o fundo da página para cinza claro */
+.md-main {
+    background-color: #f0f0f0;  /* Cor de fundo cinza claro */
+    color: #333333;             /* Cor do texto em cinza escuro */
+}
+
+/* Altera a cor do cabeçalho (header) para vermelho escuro */
+.md-header {
+    background-color: #8b0000;  /* Cor do header em vermelho escuro */
+    color: white;               /* Cor do texto do header em branco */
+}
+
+/* Ajusta a cor de fundo do footer para um cinza mais claro */
+.md-footer {
+    background-color: #e0e0e0;  /* Cor de fundo do footer em cinza claro */
+}
+
+/* Ajusta a cor dos links dentro do header */
+.md-header a {
+    color: white;               /* Cor dos links no header em branco */
+}
+
