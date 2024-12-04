@@ -1,0 +1,9 @@
+site_name: "Projeto Pipeline de Dados"
+theme:
+  name: material
+  palette:
+    primary: 'red'
+    accent: 'black'
+
+extra_css:
+  - assets/stylesheets/custom.css
