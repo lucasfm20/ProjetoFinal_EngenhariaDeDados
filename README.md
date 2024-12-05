@@ -89,10 +89,28 @@ terraform apply
   - Ajustes específicos na tabela **"corretor"**.
   - Pequenas modificações nas demais tabelas, conforme necessário.
 
-8.4  -Camada Gold
+8.4 - Camada Gold
 - Os dados da camada **Silver** foram processados e salvos na camada **Gold**.
 - Foi criada uma tabela final consolidada para atender às necessidades de análise.
 - Arquivos armazenados em **CSV** na camada **Gold** foram lidos e gravados em formato **Delta** dentro dos *DataFrames* utilizados.
 - Foi realizada a junção (*join*) dos *DataFrames* para inserir e configurar os valores necessários na tabela final.
 - Por fim, os resultados foram analisados para garantir a correta montagem da tabela e a qualidade dos dados consolidados.
+  
+## **9. Integração Databricks com Power BI**
+9.1 -  Criar um SQL Warehouse
+- No Databricks, crie um **SQL Warehouse** com a configuração **SERVERLESS**.
+
+9.2 - Gerar Token de Acesso Pessoal
+- No Databricks, crie um **token de acesso pessoal**. Este token será utilizado para integrar com o Power BI.
+
+9.3 - Fazer o Download do Ficheiro de Conexão
+- No Databricks, selecione a opção **Power BI** e faça o download do ficheiro de ligação.
+
+9.4 - Configurar a Conexão no Power BI
+- Abra o ficheiro no Power BI.  
+- O Power BI solicitará o **token de acesso** gerado anteriormente.  
+- Insira o token para estabelecer a conexão.
+
+### **9.5. Criar Dashboards**
+- Após configurar a conexão, crie seus dashboards utilizando os dados disponíveis no Databricks.
 
