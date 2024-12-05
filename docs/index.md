@@ -23,12 +23,28 @@ Antes de começar a implantação do projeto, verifique se você possui os segui
 
 ---
 
+### Modelo Físico
+
+Aqui está o diagrama do **Modelo Físico** do banco de dados, que ilustra como os dados são armazenados e estruturados no sistema:
+
+![Modelo Físico](Diagramas/fisico.png)
+
+### Modelo Multidimensional
+
+Este diagrama mostra o **Modelo Multidimensional**, que é utilizado para análise e visualização de dados em um formato mais acessível para BI:
+
+![Modelo Multidimensional](Diagramas/multidimensional.jpeg)
+
+---
+
 ## Implantação
 
 Siga os passos abaixo para a implantação do projeto. Este processo envolve a configuração de recursos na Azure e o uso do Terraform para provisionamento da infraestrutura.
 
 ### Passo 1: Criação da Conta na Azure
 1. **Acesse a Azure**: Crie uma conta paga na [Azure](https://portal.azure.com). Se já tiver uma conta, basta fazer login.
+
+---
 
 ### Passo 2: Clone o Repositório
 1. **Clone o repositório para sua máquina local**:  
@@ -37,6 +53,7 @@ Siga os passos abaixo para a implantação do projeto. Este processo envolve a c
 ```bash
    git clone https://github.com/lucasfm20/ProjetoFinal_EngenhariaDeDados.git
 ```
+---
 
 ### 3. Acesse a Pasta `iac` no Visual Studio
 
@@ -84,17 +101,27 @@ Siga os passos abaixo para a implantação do projeto. Este processo envolve a c
 #### 3.6 Logar no Portal da Azure e Conferir o Deploy
 - Após executar todos os comandos, acesse o portal da Azure para conferir se os recursos foram provisionados corretamente.
 
+---
+
 ### 4. No Portal da Azure, Clique na Sua Conta de Armazenamento e Gere um SAS Token
 - **No Portal da Azure:** Acesse sua conta de armazenamento.
 - Gere um SAS Token (Shared Access Signature) com os tipos de recursos selecionados: **Serviço, Contêiner e Objeto.** Este token será usado para acessar recursos de maneira segura.
+
+---
 
 ### 5. No Databricks, Copie os Notebooks de Cada Camada Disponíveis na Pasta `conversaoBanco`
 - **Acesse a pasta** `conversaoBanco` no repositório clonado e copie os notebooks de cada camada.
 - **Carregar no Databricks:** Importe os notebooks copiados para o Databricks para começar a execução.
 
+---
+
 ### 6. Insira os Scripts Copiados em um Notebook para Cada Camada
 - Abra os notebooks no Databricks e insira os scripts conforme cada camada do pipeline de dados.
 - Certifique-se de que cada camada tenha seu próprio notebook correspondente.
 
+---
+
 ### 7. Criação de Jobs
 - Você pode optar por criar um job com tarefas individuais, ou **executar os notebooks diretamente**. A criação de jobs permite agendar a execução automática de tarefas no Databricks.
+
+---
