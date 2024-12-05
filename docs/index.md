@@ -35,6 +35,13 @@ Este diagrama mostra o **Modelo Multidimensional**, que é utilizado para análi
 
 ![Modelo Multidimensional](Diagramas/multidimensional.jpeg)
 
+### Arquitetura Utilizada
+
+Aqui está o diagrama sobre a arquitetura completa utilizada no projeto.
+A arquitetura do projeto organiza o fluxo de dados em etapas claras: os dados são coletados de fontes como CSV e MongoDB, armazenados na Landing Zone e processados pelo Databricks com Apache Spark, dividindo-os nas camadas Bronze (dados brutos), Silver (dados tratados) e Gold (dados prontos para análise). O Azure SQL Server é usado para persistência relacional, enquanto o Power BI fornece visualizações e dashboards interativos. Scripts em Python integram e automatizam todo o pipeline.
+
+![Arquitetura](Diagramas/arquitetura.jpeg)
+
 ---
 
 ## Implantação
@@ -126,25 +133,25 @@ Siga os passos abaixo para a implantação do projeto. Este processo envolve a c
 
 ---
 
-# 8. Transformação e Processamento dos Dados na Arquitetura Medalhão
+### 8. Transformação e Processamento dos Dados na Arquitetura Medalhão
 
-## 8.1 - Camada Landing
+#### 8.1 - Camada Landing
 - Os dados gerados foram movidos para a **camada Landing**, sendo armazenados em sua forma bruta, sem qualquer transformação inicial.  
 - Configurações foram realizadas para permitir que as camadas subsequentes recebessem os dados processados.  
 - Uma tabela foi criada para validar se os valores estavam corretos e devidamente carregados nesta camada.
 
-## 8.2 - Camada Bronze
+#### 8.2 - Camada Bronze
 - Os dados brutos da **camada Landing** foram processados e salvos na **camada Bronze**.  
 - Durante o processamento, os dados foram convertidos para o formato **Delta Lake**, otimizando consultas e armazenamento.  
 - Verificações adicionais garantiram que os valores estavam corretos e que os dados foram armazenados adequadamente.
 
-## 8.3 - Camada Silver
+#### 8.3 - Camada Silver
 - A partir dos dados da **camada Bronze**, novos processamentos foram realizados para salvá-los na **camada Silver**.  
 - Nesta etapa, ocorreram transformações específicas:  
   - Ajustes detalhados na tabela **"corretor"**.  
   - Modificações pontuais em outras tabelas, conforme necessário.  
 
-## 8.4 - Camada Gold
+#### 8.4 - Camada Gold
 - Os dados da **camada Silver** foram refinados e armazenados na **camada Gold**.  
 - Foi criada uma tabela final consolidada para atender às necessidades de análise.  
 - Arquivos armazenados em formato CSV na **camada Gold** foram lidos e convertidos para o formato **Delta**, utilizado nos DataFrames.  
