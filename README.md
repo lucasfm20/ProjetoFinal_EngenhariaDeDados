@@ -70,3 +70,29 @@ terraform apply
 6- Inserir os scripts copiados em um notebook para cada camada.
 
 7-Pode ser criado um job com tarefas individuais, ou apenas executado os notebooks.
+
+## **8. Transformação e Processamento dos Dados na Arquitetura Medalhão**
+
+8.1 - Camada Landing
+- Os dados gerados foram movidos para a camada **Landing**, onde foram armazenados em sua forma bruta, sem transformações.
+- As camadas subsequentes foram configuradas para receber os dados processados.
+- Uma tabela foi criada para verificar se os valores estavam corretos e devidamente carregados nesta camada.
+
+8.2 - Camada Bronze
+- Os dados da camada **Landing** foram processados e salvos na camada **Bronze**.
+- Durante o processamento, os dados foram convertidos para o formato **Delta Lake**, otimizando a consulta e o armazenamento.
+- Verificações foram realizadas para garantir que os valores estavam corretos e que os dados foram salvos adequadamente.
+
+8.3 - Camada Silver
+- Os dados da camada **Bronze** foram processados e salvos na camada **Silver**.
+- Nesta etapa, foram realizadas transformações nos dados:
+  - Ajustes específicos na tabela **"corretor"**.
+  - Pequenas modificações nas demais tabelas, conforme necessário.
+
+8.4  -Camada Gold
+- Os dados da camada **Silver** foram processados e salvos na camada **Gold**.
+- Foi criada uma tabela final consolidada para atender às necessidades de análise.
+- Arquivos armazenados em **CSV** na camada **Gold** foram lidos e gravados em formato **Delta** dentro dos *DataFrames* utilizados.
+- Foi realizada a junção (*join*) dos *DataFrames* para inserir e configurar os valores necessários na tabela final.
+- Por fim, os resultados foram analisados para garantir a correta montagem da tabela e a qualidade dos dados consolidados.
+
