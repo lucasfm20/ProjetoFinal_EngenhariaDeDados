@@ -159,3 +159,17 @@ Siga os passos abaixo para a implantação do projeto. Este processo envolve a c
 - Por fim, análises detalhadas foram feitas para garantir a correta montagem da tabela consolidada e a qualidade dos dados processados.
 
 ---
+
+### 9. KPIS
+
+![KPIS](Diagramas/kpis.jpeg)
+
+---
+
+### 10. Dashboards
+
+![Dashboard](Diagramas/d1.jpeg)
+
+![Dashboard](Diagramas/d2.jpeg)
+
+---
